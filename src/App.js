@@ -12,6 +12,8 @@ import Register from "./pages/Register";
 import Post from "./pages/Post";
 import Write from "./pages/Write";
 
+import "./style.scss";
+
 const Layout = () => {
     return (
         <>
