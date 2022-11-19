@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-
 import axios from "axios";
+import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/authContext";
 
 const Login = () => {
+    const { login } = useContext(AuthContext);
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({
         username: "",
@@ -23,7 +24,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post("/auth/login", inputs);
+            await login(inputs);
             navigate("/");
         } catch (err) {
             setErr(err.response.data);
