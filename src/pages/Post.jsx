@@ -62,7 +62,7 @@ const Post = () => {
                 <h1>{post.title}</h1>
                 {post.desc}
             </div>
-            <Menu />
+            <Menu cat={post.cat} />
         </div>
     );
 };
