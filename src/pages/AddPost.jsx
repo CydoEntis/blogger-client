@@ -2,14 +2,22 @@ import React from "react";
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import Category from "../components/Category";
 
 const AddPost = () => {
     const [value, setValue] = useState("");
+    const [title, setTitle] = useState("");
+    const [file, setFile] = useState(null);
+    const [cat, setCat] = useState("");
 
     return (
         <div className="add">
             <div className="content">
-                <input type="text" placeholder="Title" />
+                <input
+                    type="text"
+                    placeholder="Title"
+                    onChange={(e) => setTitle(e.target.value)}
+                />
                 <div className="editorContainer">
                     <ReactQuill
                         className="editor"
@@ -33,61 +41,49 @@ const AddPost = () => {
                         type="file"
                         name=""
                         id="file"
+                        onChange={(e) => setFile(e.target.files[0])}
                     />
                     <label className="file" htmlFor="file">
                         Upload Image
                     </label>
                     <div className="buttons">
                         <button>Save as a draft</button>
-                        <button>Update</button>
+                        <button>Publish</button>
                     </div>
                 </div>
                 <div className="item">
                     <h1>Category</h1>
-                    <div className="cat">
-                        <input type="radio" name="cat" value="art" id="art" />
-                        <label htmlFor="art">Art</label>
-                    </div>
-                    <div className="cat">
-                        <input
-                            type="radio"
-                            name="cat"
-                            value="science"
-                            id="science"
-                        />
-                        <label htmlFor="science">Science</label>
-                    </div>
-                    <div className="cat">
-                        <input
-                            type="radio"
-                            name="cat"
-                            value="technology"
-                            id="technology"
-                        />
-                        <label htmlFor="technology">Technology</label>
-                    </div>
-                    <div className="cat">
-                        <input
-                            type="radio"
-                            name="cat"
-                            value="cinema"
-                            id="cinema"
-                        />
-                        <label htmlFor="cinema">Cinema</label>
-                    </div>
-                    <div className="cat">
-                        <input
-                            type="radio"
-                            name="cat"
-                            value="design"
-                            id="design"
-                        />
-                        <label htmlFor="design">Design</label>
-                    </div>
-                    <div className="cat">
-                        <input type="radio" name="cat" value="food" id="food" />
-                        <label htmlFor="food">Food</label>
-                    </div>
+
+                    <Category
+                        value="art"
+                        text="Art"
+                        onChange={(e) => setCat(e.target.value)}
+                    />
+                    <Category
+                        value="science"
+                        text="Science"
+                        onChange={(e) => setCat(e.target.value)}
+                    />
+                    <Category
+                        value="technology"
+                        text="Technology"
+                        onChange={(e) => setCat(e.target.value)}
+                    />
+                    <Category
+                        value="cinema"
+                        text="Cinema"
+                        onChange={(e) => setCat(e.target.value)}
+                    />
+                    <Category
+                        value="design"
+                        text="Design"
+                        onChange={(e) => setCat(e.target.value)}
+                    />
+                    <Category
+                        value="food"
+                        text="Food"
+                        onChange={(e) => setCat(e.target.value)}
+                    />
                 </div>
             </div>
         </div>
