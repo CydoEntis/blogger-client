@@ -1,11 +1,29 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Edit from "../img/edit.png";
 import Delete from "../img/delete.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Menu from "../components/Menu";
 
-const Single = () => {
+const Post = () => {
+    const [posts, setPosts] = useState([]);
+    const location = useLocation();
+
+    const category = location.search;
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axios.get(`/posts${category}`);
+                setPosts(res.data);
+            } catch (err) {
+                console.log(err);
+            }
+        };
+
+        fetchData();
+    }, [category]);
+
     return (
         <div className="post">
             <div className="content">
@@ -51,4 +69,4 @@ const Single = () => {
     );
 };
 
-export default Single;
+export default Post;
