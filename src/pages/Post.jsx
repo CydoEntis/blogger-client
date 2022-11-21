@@ -52,7 +52,7 @@ const Post = () => {
                     </div>
                     {currentUser.username === post.username && (
                         <div className="edit">
-                            <Link to="/write?edit=2">
+                            <Link to={`/write?edit=${post.id}`} state={post}>
                                 <img src={Edit} alt="" />
                             </Link>
                             <img onClick={handleDelete} src={Delete} alt="" />

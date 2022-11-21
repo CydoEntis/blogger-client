@@ -43,7 +43,7 @@ const Navbar = () => {
                         </Link>
                     )}
                     <span className="write">
-                        <Link className="link" to="/add">
+                        <Link className="link" to="/write">
                             Write
                         </Link>
                     </span>

@@ -3,13 +3,15 @@ import React from "react";
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { useLocation } from "react-router-dom";
 import Category from "../components/Category";
 
-const AddPost = () => {
-    const [value, setValue] = useState("");
-    const [title, setTitle] = useState("");
+const WritePost = () => {
+    const state = useLocation().state;
+    const [value, setValue] = useState(state?.desc || "");
+    const [title, setTitle] = useState(state?.title || "");
     const [file, setFile] = useState(null);
-    const [cat, setCat] = useState("");
+    const [cat, setCat] = useState(state?.cat || "");
 
     const upload = async () => {
         try {
@@ -37,6 +39,7 @@ const AddPost = () => {
         <div className="add">
             <div className="content">
                 <input
+                    value={title}
                     type="text"
                     placeholder="Title"
                     onChange={(e) => setTitle(e.target.value)}
@@ -78,31 +81,37 @@ const AddPost = () => {
                     <h1>Category</h1>
 
                     <Category
+                        cat={cat}
                         value="art"
                         text="Art"
                         onChange={(e) => setCat(e.target.value)}
                     />
                     <Category
+                        cat={cat}
                         value="science"
                         text="Science"
                         onChange={(e) => setCat(e.target.value)}
                     />
                     <Category
+                        cat={cat}
                         value="technology"
                         text="Technology"
                         onChange={(e) => setCat(e.target.value)}
                     />
                     <Category
+                        cat={cat}
                         value="cinema"
                         text="Cinema"
                         onChange={(e) => setCat(e.target.value)}
                     />
                     <Category
+                        cat={cat}
                         value="design"
                         text="Design"
                         onChange={(e) => setCat(e.target.value)}
                     />
                     <Category
+                        cat={cat}
                         value="food"
                         text="Food"
                         onChange={(e) => setCat(e.target.value)}
@@ -113,4 +122,4 @@ const AddPost = () => {
     );
 };
 
-export default AddPost;
+export default WritePost;

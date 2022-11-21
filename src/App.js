@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Post from "./pages/Post";
-import AddPost from "./pages/AddPost";
+import WritePost from "./pages/WritePost";
 
 import "./style.scss";
 
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/add",
-                element: <AddPost />,
+                element: <WritePost />,
             },
         ],
     },
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/add",
-        element: <AddPost />,
+        element: <WritePost />,
     },
     {
         path: "/post",
