@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import ReactQuill from "react-quill";
@@ -9,6 +10,28 @@ const AddPost = () => {
     const [title, setTitle] = useState("");
     const [file, setFile] = useState(null);
     const [cat, setCat] = useState("");
+
+    const upload = async () => {
+        try {
+            const formData = new FormData();
+            formData.append("file", file);
+
+            const res = await axios.post("/upload", formData);
+            return res.data;
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const handleClick = async (e) => {
+        e.preventDefault();
+        const imageUrl = upload();
+
+        try {
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     return (
         <div className="add">
@@ -48,7 +71,7 @@ const AddPost = () => {
                     </label>
                     <div className="buttons">
                         <button>Save as a draft</button>
-                        <button>Publish</button>
+                        <button onClick={handleClick}>Publish</button>
                     </div>
                 </div>
                 <div className="item">
