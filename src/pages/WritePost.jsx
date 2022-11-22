@@ -1,4 +1,5 @@
 import axios from "axios";
+import moment from "moment/moment";
 import React from "react";
 import { useState } from "react";
 import ReactQuill from "react-quill";
@@ -30,6 +31,20 @@ const WritePost = () => {
         const imageUrl = upload();
 
         try {
+            state
+                ? await axios.put(`/posts/${state.id}`, {
+                      title,
+                      desc: value,
+                      cat,
+                      img: file ? imageUrl : "",
+                  })
+                : await axios.post(`/posts`, {
+                      title,
+                      desc: value,
+                      cat,
+                      img: file ? imageUrl : "",
+                      date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
+                  });
         } catch (err) {
             console.log(err);
         }
