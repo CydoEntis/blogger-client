@@ -44,7 +44,10 @@ const Post = () => {
     return (
         <div className="post">
             <div className="content">
-                <img src={post?.img} alt="" />
+                <img
+                    src={`http://localhost:8800/uploads/${post?.img}`}
+                    alt=""
+                />
                 <div className="user">
                     {post.userImg && <img src={post.userImg} alt="" />}
                     <div className="info">
