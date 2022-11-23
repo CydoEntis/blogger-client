@@ -9,12 +9,13 @@ import moment from "moment";
 import { useContext } from "react";
 import { AuthContext } from "../context/authContext";
 
+import { getText } from "../util";
+
 const Post = () => {
     const [post, setPost] = useState([]);
     const location = useLocation();
     const navigate = useNavigate();
     const postId = location.pathname.split("/")[2];
-    console.log(postId);
 
     const { currentUser } = useContext(AuthContext);
 
@@ -43,7 +44,7 @@ const Post = () => {
     return (
         <div className="post">
             <div className="content">
-                {/* <img src={post?.img} alt="" /> */}
+                <img src={post?.img} alt="" />
                 <div className="user">
                     {post.userImg && <img src={post.userImg} alt="" />}
                     <div className="info">
@@ -60,7 +61,7 @@ const Post = () => {
                     )}
                 </div>
                 <h1>{post.title}</h1>
-                {post.desc}
+                <p>{getText(post.desc)}</p>
             </div>
             <Menu cat={post.cat} />
         </div>
