@@ -4,11 +4,12 @@ import React from "react";
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Category from "../components/Category";
 
 const WritePost = () => {
     const state = useLocation().state;
+    const navigate = useNavigate();
     const [value, setValue] = useState(state?.desc || "");
     const [title, setTitle] = useState(state?.title || "");
     const [file, setFile] = useState(null);
@@ -46,6 +47,7 @@ const WritePost = () => {
                       img: file ? imageUrl : "",
                       date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
                   });
+            navigate("/");
         } catch (err) {
             console.log(err);
         }
