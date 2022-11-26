@@ -2,7 +2,15 @@
 module.exports = {
     content: ["./src/**/*.{js,jsx,ts,tsx}"],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                fredoka: ["Fredoka One", "sans-serif"],
+            },
+            colors: {
+                "vivid-blue": "#31CAFF",
+                "med-blue": "#2E3A5E",
+            },
+        },
     },
     plugins: [],
 };

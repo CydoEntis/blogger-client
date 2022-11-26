@@ -1,61 +1,115 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
+import { FaBars } from "react-icons/fa";
+import { IoCloseSharp } from "react-icons/io5";
 
 import Logo from "../img/logo.png";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
     const { currentUser, logout } = useContext(AuthContext);
+    const [showNav, setShowNav] = useState(false);
+
+    const handleClick = () => {
+        setShowNav((prev) => !prev);
+    };
 
     return (
-        <div className="w-full h-[80px] flex flex-row justify-end items-center bg-stone-900 text-white">
-            <div className="">
-                {/* <div className="logo">
+        <>
+            <div className="p-3 flex justify-between items-center">
+                <div className="logo">
                     <Link to="/">
-                        <img src={Logo} alt="" />
-                    </Link>
-                </div> */}
-                <div className="flex items-center">
-                    <Link className="mx-3" to="/?cat=art">
-                        <h6>Art</h6>
-                    </Link>
-                    <Link className="mx-3" to="/?cat=science">
-                        <h6>Science</h6>
-                    </Link>
-                    <Link className="mx-3" to="/?cat=technology">
-                        <h6>Technology</h6>
-                    </Link>
-                    <Link className="mx-3" to="/?cat=cinema">
-                        <h6>Cinema</h6>
-                    </Link>
-                    <Link className="mx-3" to="/?cat=design">
-                        <h6>Design</h6>
-                    </Link>
-                    <Link className="mx-3" to="/?cat=food">
-                        <h6>Food</h6>
-                    </Link>
-                    <span className="mx-3">{currentUser?.username}</span>
-                    {currentUser ? (
-                        <button
-                            className="mx-3 py-2 px-5 bg-red-500 hover:bg-red-600 rounded-xl shadow-md transition ease-in-out duration-300"
-                            onClick={logout}
-                        >
-                            Logout
-                        </button>
-                    ) : (
-                        <Link className="mx-3" to="/login">
-                            Login
-                        </Link>
-                    )}
-                    <Link
-                        className="mx-3 py-2 px-5 bg-emerald-500 hover:bg-emerald-600 rounded-xl shadow-md transition ease-in-out duration-300"
-                        to="/write"
-                    >
-                        Write
+                        <h3 className="font-fredoka text-med-blue">Bloggish</h3>
                     </Link>
                 </div>
+                {/* Mobile Nav */}
+                <div
+                    className="p-3 border border-[#2E3A5E] rounded-md hover:border-[#3ACCFF]"
+                    onClick={handleClick}
+                >
+                    {!showNav && (
+                        <FaBars className="text-2xl text-[#2E3A5E] hover:text-[#3ACCFF]" />
+                    )}
+                    {showNav && (
+                        <IoCloseSharp className="text-2xl text-[#2E3A5E] hover:text-[#3ACCFF]" />
+                    )}
+                </div>
+
+                {/* <div className="hidden md:flex items-center">
+                <ul className="flex md:w-[600px] justify-around border  items-center">
+                    <li className="">
+                        <Link className=" hover:text-customBlue" to="/?cat=art">
+                            Art
+                        </Link>
+                    </li>
+                    <li className="">
+                        <Link
+                            className=" hover:text-customBlue"
+                            to="/?cat=science"
+                        >
+                            Science
+                        </Link>
+                    </li>
+                    <li className=" ">
+                        <Link
+                            className=" hover:text-customBlue"
+                            to="/?cat=technology"
+                        >
+                            Technology
+                        </Link>
+                    </li>
+                    <li className="">
+                        <Link
+                            className=" hover:text-customBlue"
+                            to="/?cat=cinema"
+                        >
+                            Cinema
+                        </Link>
+                    </li>
+                    <li className="">
+                        <Link
+                            className=" hover:text-customBlue"
+                            to="/?cat=design"
+                        >
+                            Design
+                        </Link>
+                    </li>
+                    <li className="">
+                        <Link
+                            className=" hover:text-customBlue"
+                            to="/?cat=food"
+                        >
+                            Food
+                        </Link>
+                    </li>
+                </ul>
+
+                <span className=" hover:text-customBlue">
+                    {currentUser?.username}
+                </span>
+                {currentUser ? (
+                    <button
+                        className="mx-3 py-2 px-5 bg-red-500 hover:bg-red-600 rounded-xl shadow-md transition ease-in-out duration-300"
+                        onClick={logout}
+                    >
+                        Logout
+                    </button>
+                ) : (
+                    <Link className="mx-3" to="/login">
+                        Login
+                    </Link>
+                )}
+                <Link
+                    className="mx-3 py-2 px-5 bg-emerald-500 hover:bg-emerald-600 rounded-xl shadow-md transition ease-in-out duration-300"
+                    to="/write"
+                >
+                    Write
+                </Link>
+            </div> */}
             </div>
-        </div>
+            {showNav && <MobileNav />}
+        </>
     );
 };
 

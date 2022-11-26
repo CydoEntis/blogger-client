@@ -13,6 +13,7 @@ import Post from "./pages/Post";
 import WritePost from "./pages/WritePost";
 
 import "./style.scss";
+import MobileNav from "./components/MobileNav";
 
 const Layout = () => {
     return (
@@ -63,8 +64,8 @@ const router = createBrowserRouter([
 
 function App() {
     return (
-        <div className="app">
-            <div className="container">
+        <div className="app font-poppins">
+            <div className="md:w-[75%] mx-auto">
                 <RouterProvider router={router} />
             </div>
         </div>
