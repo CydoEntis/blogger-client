@@ -18,7 +18,7 @@ const Navbar = () => {
     return (
         <>
             <div className="p-3 flex justify-between items-center">
-                <div className="logo">
+                <div className="text-3xl">
                     <Link to="/">
                         <h3 className="font-fredoka text-med-blue">Bloggish</h3>
                     </Link>
@@ -108,7 +108,7 @@ const Navbar = () => {
                 </Link>
             </div> */}
             </div>
-            {showNav && <MobileNav />}
+            {showNav && <MobileNav onClick={handleClick} />}
         </>
     );
 };
