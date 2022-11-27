@@ -23,26 +23,29 @@ const Home = () => {
     }, [category]);
 
     return (
-        <div className="">
-            <div className="posts">
-                {posts.map((post) => (
-                    <div className="post" key={post.id}>
-                        <div className="img">
-                            <img
-                                src={`http://localhost:8800/uploads/${post?.img}`}
-                                alt=""
-                            />
-                        </div>
-                        <div className="content">
-                            <Link className="link" to={`/post/${post.id}`}>
-                                <h1>{post.title}</h1>
-                            </Link>
-                            <p>{getText(post.desc)}</p>
-                            <button>Read More</button>
-                        </div>
+        <div className="p-3 grid grid-cols-1 gap-7 place-items-center md:grid-cols-2 xl:grid-cols-3">
+            {posts.map((post) => (
+                <div className="rounded-xl relative bg-zinc-600 " key={post.id}>
+                    <div className="w-full mix-blend-overlay">
+                        <img
+                            className="rounded-xl"
+                            src={`http://localhost:8800/uploads/${post?.img}`}
+                            alt=""
+                        />
                     </div>
-                ))}
-            </div>
+                    <div className="absolute bottom-0 py-2 ml-3 text-white font-fredoka">
+                        <Link className="link" to={`/post/${post.id}`}>
+                            <h1 className="font-fredoka capitalize text-2xl">
+                                {post.title}
+                            </h1>
+                        </Link>
+                        <p className="text-xl">{getText(post.desc) + "..."}</p>
+                        <button className="py-1 px-3 rounded-md bg-med-blue text-lg hover:bg-white hover:text-med-blue transition-all ease-in-out duration-300">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            ))}
         </div>
     );
 };

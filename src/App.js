@@ -65,7 +65,7 @@ const router = createBrowserRouter([
 function App() {
     return (
         <div className="app font-poppins">
-            <div className="md:w-[75%] mx-auto">
+            <div className="">
                 <RouterProvider router={router} />
             </div>
         </div>
