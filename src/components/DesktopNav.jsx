@@ -1,4 +1,5 @@
 import React from "react";
+import AuthItem from "./AuthItem";
 import NavItem from "./NavItem";
 
 const DesktopNav = ({ className }) => {
@@ -15,6 +16,16 @@ const DesktopNav = ({ className }) => {
                 <NavItem text="cinema" to="/?cat=cinema" className="py-3" />
                 <NavItem text="design" to="/?cat=design" className="py-3" />
                 <NavItem text="food" to="/?cat=food" className="py-3" />
+                <AuthItem
+                    text="login"
+                    to="/login"
+                    className="py-3 px-5 rounded-md bg-vivid-blue"
+                />
+                <AuthItem
+                    text="register"
+                    to="/register"
+                    className="py-3 px-5  bg-med-blue rounded-md"
+                />
             </ul>
         </nav>
     );

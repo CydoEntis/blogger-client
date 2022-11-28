@@ -25,29 +25,6 @@ const Navbar = () => {
                 </div>
                 {/* Mobile Nav */}
 
-                {/* <div className="md:">
-                    <span className=" hover:text-customBlue">
-                        {currentUser?.username}
-                    </span>
-                    {currentUser ? (
-                        <button
-                            className="mx-3 py-2 px-5 bg-red-500 hover:bg-red-600 rounded-xl shadow-md transition ease-in-out duration-300"
-                            onClick={logout}
-                        >
-                            Logout
-                        </button>
-                    ) : (
-                        <Link className="mx-3" to="/login">
-                            Login
-                        </Link>
-                    )}
-                    <Link
-                        className="mx-3 py-2 px-5 bg-emerald-500 hover:bg-emerald-600 rounded-xl shadow-md transition ease-in-out duration-300"
-                        to="/write"
-                    >
-                        Write
-                    </Link>
-                </div> */}
                 <NavbarIcon showNav={showNav} onClick={handleClick} />
                 <DesktopNav className="hidden lg:flex items-center" />
                 {showNav && (

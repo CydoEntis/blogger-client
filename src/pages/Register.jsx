@@ -32,15 +32,18 @@ const Register = () => {
     };
 
     return (
-        <div className="auth">
-            <h1>Register</h1>
-            <form action="" onSubmit={handleSubmit}>
+        <div className="mx-auto mt-8 p-10 w-[90%] border shadow-md rounded-md">
+            <h1 className="font-fredoka text-center text-2xl text-med-blue ">
+                Register
+            </h1>
+            <form className="flex flex-col mx-auto " onSubmit={handleSubmit}>
                 <input
                     required
                     type="text"
                     placeholder="username"
                     name="username"
                     onChange={handleChange}
+                    className="font-fredoka text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
                 />
                 <input
                     required
@@ -48,6 +51,7 @@ const Register = () => {
                     placeholder="email"
                     name="email"
                     onChange={handleChange}
+                    className="font-fredoka text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
                 />
                 <input
                     required
@@ -55,11 +59,17 @@ const Register = () => {
                     placeholder="password"
                     name="password"
                     onChange={handleChange}
+                    className="font-fredoka text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
                 />
-                <button>Register</button>
+                <button className="mt-5 text-white bg-med-blue py-2 px-3 rounded-md">
+                    Register
+                </button>
                 {err && <p>{err}</p>}
-                <span>
-                    Already have an account? <Link to="/login">Login</Link>
+                <span className="my-3 font-fredoka text-med-blue">
+                    Already have an account?{" "}
+                    <Link className="font-fredoka text-vivid-blue" to="/login">
+                        Login
+                    </Link>
                 </span>
             </form>
         </div>
