@@ -1,11 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import NavItem from "./NavItem";
 
-const MobileNav = ({ isMobile, onClick }) => {
+const MobileNav = ({ className, onClick }) => {
     return (
-        <div className="absolute top-[80px] z-50 bg-white w-full border-t-[1px] border-med-blue rounded-b-lg">
-            <ul className="text-center md:w-[600px] rounded-b-lg drop-shadow-md">
+        <nav className={className}>
+            <ul className="text-center rounded-b-lg drop-shadow-md">
                 <NavItem
                     text="art"
                     to="/?cat=art"
@@ -42,7 +41,7 @@ const MobileNav = ({ isMobile, onClick }) => {
                     onClick={onClick}
                 />
             </ul>
-        </div>
+        </nav>
     );
 };
 

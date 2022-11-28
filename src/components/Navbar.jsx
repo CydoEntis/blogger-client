@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
 
 import Logo from "../img/logo.png";
+import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
+import NavbarIcon from "./NavbarIcon";
 
 const Navbar = () => {
     const { currentUser, logout } = useContext(AuthContext);
@@ -15,7 +17,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="p-3 flex justify-between items-center">
+            <div className="relative flex justify-between items-center p-3">
                 <div className="text-3xl">
                     <Link to="/">
                         <h3 className="font-fredoka text-med-blue">Bloggish</h3>
@@ -23,58 +25,7 @@ const Navbar = () => {
                 </div>
                 {/* Mobile Nav */}
 
-                <div className="md:hidden xl:flex items-center">
-                    <ul className="flex md:w-[600px] justify-around border  items-center">
-                        <li className="">
-                            <Link
-                                className=" hover:text-customBlue"
-                                to="/?cat=art"
-                            >
-                                Art
-                            </Link>
-                        </li>
-                        <li className="">
-                            <Link
-                                className=" hover:text-customBlue"
-                                to="/?cat=science"
-                            >
-                                Science
-                            </Link>
-                        </li>
-                        <li className=" ">
-                            <Link
-                                className=" hover:text-customBlue"
-                                to="/?cat=technology"
-                            >
-                                Technology
-                            </Link>
-                        </li>
-                        <li className="">
-                            <Link
-                                className=" hover:text-customBlue"
-                                to="/?cat=cinema"
-                            >
-                                Cinema
-                            </Link>
-                        </li>
-                        <li className="">
-                            <Link
-                                className=" hover:text-customBlue"
-                                to="/?cat=design"
-                            >
-                                Design
-                            </Link>
-                        </li>
-                        <li className="">
-                            <Link
-                                className=" hover:text-customBlue"
-                                to="/?cat=food"
-                            >
-                                Food
-                            </Link>
-                        </li>
-                    </ul>
-
+                {/* <div className="md:">
                     <span className=" hover:text-customBlue">
                         {currentUser?.username}
                     </span>
@@ -96,9 +47,16 @@ const Navbar = () => {
                     >
                         Write
                     </Link>
-                </div>
+                </div> */}
+                <NavbarIcon showNav={showNav} onClick={handleClick} />
+                <DesktopNav className="hidden lg:flex items-center" />
+                {showNav && (
+                    <MobileNav
+                        className="p-0 fixed top-[60px] z-50 bg-white w-[100%] rounded-b-lg"
+                        onClick={handleClick}
+                    />
+                )}
             </div>
-            {showNav && <MobileNav onClick={handleClick} />}
         </>
     );
 };

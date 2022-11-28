@@ -23,7 +23,7 @@ const Home = () => {
     }, [category]);
 
     return (
-        <div className="p-3 grid grid-cols-1 gap-7 place-items-center md:grid-cols-2 xl:grid-cols-3">
+        <div className="p-3 grid grid-cols-1 gap-7 place-items-center md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
             {posts.map((post) => (
                 <div className="rounded-xl relative bg-zinc-600 " key={post.id}>
                     <div className="w-full mix-blend-overlay">
