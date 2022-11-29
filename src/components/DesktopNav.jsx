@@ -24,13 +24,13 @@ const DesktopNav = ({ className, onLogout, currentUser }) => {
                             Hello, {currentUser.username}
                         </p>
                         <Link
-                            className="mr-3 font-fredoka text-white bg-vivid-blue py-3 px-5 rounded-md"
+                            className="mr-3 font-fredoka text-white bg-vivid-blue py-3 px-5 rounded-md cursor-pointer hover:brightness-75"
                             to="/write"
                         >
                             New Post
                         </Link>
                         <button
-                            className="font-fredoka my-3 text-white py-3 px-5 rounded-md bg-med-blue"
+                            className="font-fredoka my-3 text-white py-3 px-5 rounded-md bg-med-blue cursor-pointer hover:brightness-75"
                             onClick={onLogout}
                         >
                             Logout
