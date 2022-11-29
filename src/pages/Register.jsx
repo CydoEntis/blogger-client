@@ -32,7 +32,7 @@ const Register = () => {
     };
 
     return (
-        <div className="mx-auto mt-8 p-10 w-[90%] border shadow-md rounded-md">
+        <div className="mx-auto mt-8 p-10 w-[90%] max-w-[750px] border shadow-md rounded-md">
             <h1 className="font-fredoka text-center text-2xl text-med-blue ">
                 Register
             </h1>
@@ -67,7 +67,7 @@ const Register = () => {
                 {err && <p>{err}</p>}
                 <span className="my-3 font-fredoka text-med-blue">
                     Already have an account?{" "}
-                    <Link className="font-fredoka text-vivid-blue" to="/login">
+                    <Link className="font-fredoka text-med-blue" to="/login">
                         Login
                     </Link>
                 </span>

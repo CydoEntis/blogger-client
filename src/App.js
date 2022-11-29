@@ -13,7 +13,6 @@ import Post from "./pages/Post";
 import WritePost from "./pages/WritePost";
 
 import "./style.scss";
-import MobileNav from "./components/MobileNav";
 
 const Layout = () => {
     return (
@@ -39,32 +38,28 @@ const router = createBrowserRouter([
                 element: <Post />,
             },
             {
+                path: "/register",
+                element: <Register />,
+            },
+            {
+                path: "/login",
+                element: <Login />,
+            },
+            {
                 path: "/write",
                 element: <WritePost />,
             },
+            {
+                path: "/post",
+                element: <Post />,
+            },
         ],
-    },
-    {
-        path: "/register",
-        element: <Register />,
-    },
-    {
-        path: "/login",
-        element: <Login />,
-    },
-    {
-        path: "/write",
-        element: <WritePost />,
-    },
-    {
-        path: "/post",
-        element: <Post />,
     },
 ]);
 
 function App() {
     return (
-        <div className="app font-poppins">
+        <div className="app font-fedorka">
             <div className="">
                 <RouterProvider router={router} />
             </div>

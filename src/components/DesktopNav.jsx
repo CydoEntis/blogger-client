@@ -1,31 +1,56 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../context/authContext";
 import AuthItem from "./AuthItem";
 import NavItem from "./NavItem";
 
-const DesktopNav = ({ className }) => {
+const DesktopNav = ({ className, onLogout, currentUser }) => {
     return (
         <nav className={className}>
-            <ul className="flex md:w-[600px] justify-around items-center">
-                <NavItem text="art" to="/?cat=art" className="py-3" />
-                <NavItem text="science" to="/?cat=science" className="py-3" />
+            <ul className="flex justify-around items-center">
+                <NavItem text="art" to="/?cat=art" className="mr-3" />
+                <NavItem text="science" to="/?cat=science" className="mr-3" />
                 <NavItem
                     text="technology"
                     to="/?cat=technology"
-                    className="py-3"
+                    className="mr-3"
                 />
-                <NavItem text="cinema" to="/?cat=cinema" className="py-3" />
-                <NavItem text="design" to="/?cat=design" className="py-3" />
-                <NavItem text="food" to="/?cat=food" className="py-3" />
-                <AuthItem
-                    text="login"
-                    to="/login"
-                    className="py-3 px-5 rounded-md bg-vivid-blue"
-                />
-                <AuthItem
-                    text="register"
-                    to="/register"
-                    className="py-3 px-5  bg-med-blue rounded-md"
-                />
+                <NavItem text="cinema" to="/?cat=cinema" className="mr-3" />
+                <NavItem text="design" to="/?cat=design" className="mr-3" />
+                <NavItem text="food" to="/?cat=food" className="mr-3" />
+                {currentUser && (
+                    <>
+                        <p className="font-fredoka text-med-blue capitalize text-xl mr-3">
+                            Hello, {currentUser.username}
+                        </p>
+                        <Link
+                            className="mr-3 font-fredoka text-white bg-vivid-blue py-3 px-5 rounded-md"
+                            to="/write"
+                        >
+                            New Post
+                        </Link>
+                        <button
+                            className="font-fredoka my-3 text-white py-3 px-5 rounded-md bg-med-blue"
+                            onClick={onLogout}
+                        >
+                            Logout
+                        </button>
+                    </>
+                )}
+                {!currentUser && (
+                    <>
+                        <AuthItem
+                            text="login"
+                            to="/login"
+                            className="w-[50%] mx-auto my-3 py-3 px-5 rounded-md bg-med-blue mr-3"
+                        />
+                        <AuthItem
+                            text="register"
+                            to="/register"
+                            className="w-[50%] mx-auto my-3 py-3 px-5  bg-med-blue rounded-md "
+                        />
+                    </>
+                )}
             </ul>
         </nav>
     );

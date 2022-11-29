@@ -11,7 +11,7 @@ const NavItem = ({ className, text, to, onClick }) => {
             <NavLink
                 className={`${
                     query === to ? "text-vivid-blue" : "text-med-blue"
-                } font-fredoka capitalize hover:text-vivid-blue`}
+                } font-fredoka capitalize text-xl sm:text-2xl lg:text-lg hover:text-vivid-blue`}
                 to={to}
                 onClick={onClick}
             >
