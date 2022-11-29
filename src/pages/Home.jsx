@@ -23,12 +23,15 @@ const Home = () => {
     }, [category]);
 
     return (
-        <div className="p-3 pt-[80px] lg:pt-[100px] grid grid-cols-1 gap-7 place-items-center md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+        <div className="p-3 pt-[80px] grid grid-cols gap-4 grid-cols-1 md:grid-cols-2 md:pt-[100px] xl:w-[1440px] xl:mx-auto xl:grid-cols-3 2xl:grid-cols-3">
             {posts.map((post) => (
-                <div className="rounded-xl relative bg-zinc-600 " key={post.id}>
-                    <div className="w-full mix-blend-overlay">
+                <div
+                    className=" rounded-xl relative bg-zinc-600 "
+                    key={post.id}
+                >
+                    <div className="w-full mix-blend-overlay xl:w-full xl:h-[300px]">
                         <img
-                            className="rounded-xl"
+                            className="rounded-xl w-full h-full"
                             src={`http://localhost:8800/uploads/${post?.img}`}
                             alt=""
                         />

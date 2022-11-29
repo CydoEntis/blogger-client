@@ -22,8 +22,8 @@ const Navbar = () => {
     };
 
     return (
-        <>
-            <div className="fixed z-40 w-full bg-white flex justify-between items-center p-3">
+        <div className="w-[1440px] mx-auto">
+            <div className="fixed z-40 w-full bg-white flex justify-between items-center p-3 xl:w-[1440px] xl:mx-auto">
                 <div className="text-3xl">
                     <Link to="/">
                         <h3 className="font-fredoka text-med-blue">Bloggish</h3>
@@ -44,7 +44,7 @@ const Navbar = () => {
                     />
                 )}
             </div>
-        </>
+        </div>
     );
 };
 
