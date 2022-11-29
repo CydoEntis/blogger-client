@@ -40,9 +40,12 @@ const Home = () => {
                             </h1>
                         </Link>
                         <p className="text-xl">{getText(post.desc) + "..."}</p>
-                        <button className="py-1 px-3 rounded-md bg-med-blue text-lg hover:bg-white hover:text-med-blue transition-all ease-in-out duration-300">
+                        <Link
+                            className="font-fredoka py-1 px-3 rounded-md bg-med-blue text-lg hover:bg-white hover:text-med-blue transition-all ease-in-out duration-300"
+                            to={`/post/${post.id}`}
+                        >
                             Read More
-                        </button>
+                        </Link>
                     </div>
                 </div>
             ))}
