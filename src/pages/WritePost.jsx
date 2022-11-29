@@ -54,9 +54,10 @@ const WritePost = () => {
     };
 
     return (
-        <div className="add">
-            <div className="content">
+        <div className="pt-[80px] p-3">
+            <div className="w-full font-fredoka mb-[100px]">
                 <input
+                    className="text-center text-med-blue w-full py-1 text-xl focus:outline-none"
                     value={title}
                     type="text"
                     placeholder="Title"
@@ -64,22 +65,15 @@ const WritePost = () => {
                 />
                 <div className="editorContainer">
                     <ReactQuill
-                        className="editor"
+                        className="w-full h-[250px]"
                         theme="snow"
                         value={value}
                         onChange={setValue}
                     />
                 </div>
             </div>
-            <div className="menu">
-                <div className="item">
-                    <h1>Publish</h1>
-                    <span>
-                        <b>Status: </b> Draft
-                    </span>
-                    <span>
-                        <b>Visibility: </b> Public
-                    </span>
+            <div className="w-full">
+                <div className="flex justify-between">
                     <input
                         style={{ display: "none" }}
                         type="file"
@@ -87,17 +81,20 @@ const WritePost = () => {
                         id="file"
                         onChange={(e) => setFile(e.target.files[0])}
                     />
-                    <label className="file" htmlFor="file">
+                    <label
+                        className="font-fredoka text-white bg-med-blue px-3 py-2 rounded-md mb-2"
+                        htmlFor="file"
+                    >
                         Upload Image
                     </label>
-                    <div className="buttons">
-                        <button>Save as a draft</button>
-                        <button onClick={handleClick}>Publish</button>
-                    </div>
+                    <button
+                        className="font-fredoka text-white bg-med-blue px-3 py-2 rounded-md mb-2"
+                        onClick={handleClick}
+                    >
+                        Publish
+                    </button>
                 </div>
-                <div className="item">
-                    <h1>Category</h1>
-
+                <div className="flex flex-col">
                     <Category
                         cat={cat}
                         value="art"
