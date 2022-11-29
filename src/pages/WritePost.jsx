@@ -54,10 +54,10 @@ const WritePost = () => {
     };
 
     return (
-        <div className="pt-[80px] p-3">
+        <div className="pt-[80px] lg:pt-[100px] p-3 lg:max-w-[850px] lg:mx-auto xl:max-w-[1000px] 2xl:max-w-[1240px]">
             <div className="w-full font-fredoka mb-[100px]">
                 <input
-                    className="text-center text-med-blue w-full py-1 text-xl focus:outline-none"
+                    className="text-center text-med-blue w-full py-1 text-xl xl:text-2xl focus:outline-none"
                     value={title}
                     type="text"
                     placeholder="Title"
@@ -73,7 +73,7 @@ const WritePost = () => {
                 </div>
             </div>
             <div className="w-full">
-                <div className="flex justify-between">
+                <div className="flex justify-between lg:justify-start">
                     <input
                         style={{ display: "none" }}
                         type="file"
@@ -88,13 +88,13 @@ const WritePost = () => {
                         Upload Image
                     </label>
                     <button
-                        className="font-fredoka text-white bg-med-blue px-3 py-2 rounded-md mb-2"
+                        className="font-fredoka text-white bg-med-blue px-3 py-2 rounded-md mb-2 lg:mx-3"
                         onClick={handleClick}
                     >
                         Publish
                     </button>
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col md:flex-row">
                     <Category
                         cat={cat}
                         value="art"
