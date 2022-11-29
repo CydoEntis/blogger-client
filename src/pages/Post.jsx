@@ -43,7 +43,7 @@ const Post = () => {
     };
 
     return (
-        <div className="p-3 pt-[80px] md:pt-[100px] md:max-w-[700px] md:mx-auto">
+        <div className="p-3 pt-[80px] md:pt-[100px] md:max-w-[700px] md:mx-auto lg:max-w-[1024px]">
             <div className="content">
                 <img
                     className="rounded-md"

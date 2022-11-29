@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Menu = ({ cat }) => {
     const [posts, setPosts] = useState([]);
@@ -18,15 +19,39 @@ const Menu = ({ cat }) => {
     }, [cat]);
 
     return (
-        <div className="menu">
-            <h1>Other posts you may like</h1>
-            {posts.map((post) => (
-                <div className="post" key={post.id}>
-                    <img src={post.img} alt="" />
-                    <h2>{post.title}</h2>
-                    <button>Read More</button>
-                </div>
-            ))}
+        <div className="">
+            <h1 className="text-xl font-fredoka text-med-blue capitalize xl:text-2xl">
+                Other posts you may like
+            </h1>
+            <div className="md:flex md:flex-wrap md:w-full">
+                {posts.map((post) => (
+                    <div
+                        className="my-3 rounded-xl relative bg-zinc-600 max-w-[300px] m-2"
+                        key={post.id}
+                    >
+                        <div className="mix-blend-overlay">
+                            <img
+                                className="rounded-xl"
+                                src={`http://localhost:8800/uploads/${post?.img}`}
+                                alt=""
+                            />
+                        </div>
+                        <div className="absolute bottom-0 py-2 ml-3 text-white font-fredoka">
+                            <Link className="link" to={`/post/${post.id}`}>
+                                <h1 className="font-fredoka capitalize text-2xl">
+                                    {post.title}
+                                </h1>
+                            </Link>
+                            <Link
+                                className="font-fredoka py-1 px-3 rounded-md bg-med-blue text-lg hover:bg-white hover:text-med-blue transition-all ease-in-out duration-300"
+                                to={`/post/${post.id}`}
+                            >
+                                Read More
+                            </Link>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
