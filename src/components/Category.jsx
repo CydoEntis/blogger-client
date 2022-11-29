@@ -2,7 +2,7 @@ import React from "react";
 
 const Category = ({ value, text, cat, onChange }) => {
     return (
-        <div className="cat">
+        <div className="">
             <input
                 type="radio"
                 name="cat"
@@ -11,7 +11,9 @@ const Category = ({ value, text, cat, onChange }) => {
                 id={value}
                 onChange={onChange}
             />
-            <label htmlFor={value}>{text}</label>
+            <label className="ml-2 font-fredoka" htmlFor={value}>
+                {text}
+            </label>
         </div>
     );
 };
