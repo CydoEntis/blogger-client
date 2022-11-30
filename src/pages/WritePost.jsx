@@ -49,7 +49,7 @@ const WritePost = () => {
                   });
             navigate("/");
         } catch (err) {
-            console.log(err);
+            console.log(err.message);
         }
     };
 
@@ -103,8 +103,8 @@ const WritePost = () => {
                     />
                     <Category
                         cat={cat}
-                        value="science"
-                        text="Science"
+                        value="gaming"
+                        text="Gaming"
                         onChange={(e) => setCat(e.target.value)}
                     />
                     <Category

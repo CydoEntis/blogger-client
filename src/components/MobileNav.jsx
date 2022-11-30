@@ -15,8 +15,8 @@ const MobileNav = ({ className, onClick, onLogout, currentUser }) => {
                     onClick={onClick}
                 />
                 <NavItem
-                    text="science"
-                    to="/?cat=science"
+                    text="gaming"
+                    to="/?cat=gaming"
                     className="py-3"
                     onClick={onClick}
                 />

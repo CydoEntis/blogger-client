@@ -9,7 +9,7 @@ const DesktopNav = ({ className, onLogout, currentUser }) => {
         <nav className={className}>
             <ul className="flex justify-around items-center">
                 <NavItem text="art" to="/?cat=art" className="mr-3" />
-                <NavItem text="science" to="/?cat=science" className="mr-3" />
+                <NavItem text="gaming" to="/?cat=gaming" className="mr-3" />
                 <NavItem
                     text="technology"
                     to="/?cat=technology"
