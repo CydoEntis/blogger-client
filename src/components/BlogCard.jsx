@@ -5,7 +5,7 @@ import { getText } from "../util";
 const BlogCard = ({ post }) => {
     console.log(post);
     return (
-        <div className="bg-white md:max-w-[300px] my-2">
+        <div className="bg-white md:max-w-[350px] lg:max-w-[300px] my-2">
             <div className="w-full h-[250px] object-contain">
                 <img
                     className="w-full h-full"
