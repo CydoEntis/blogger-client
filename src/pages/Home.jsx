@@ -30,9 +30,9 @@ const Home = () => {
     console.log(posts);
 
     return (
-        <div className="mx-auto pt-[120px] w-[1240px]">
+        <div className="mx-auto pt-[120px] p-3 w-full md:w-[1024px] lg:w-[1240px]">
             <HeadBlogPost post={newestPost} />
-            <div className="flex flex-wrap justify-between">
+            <div className="flex flex-col md:flex-row md:flex-wrap justify-between">
                 {posts.map((post) => (
                     <BlogCard key={post.id} post={post} />
                 ))}

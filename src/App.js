@@ -59,7 +59,7 @@ const router = createBrowserRouter([
 
 function App() {
     return (
-        <div className="app font-fedorka">
+        <div className="app">
             <div className="">
                 <RouterProvider router={router} />
             </div>

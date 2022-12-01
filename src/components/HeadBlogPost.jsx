@@ -4,15 +4,15 @@ import { getText } from "../util";
 
 const HeadBlogPost = ({ post }) => {
     return (
-        <div className="flex bg-white w-full my-10">
-            <div className="w-full">
+        <div className="md:flex bg-white w-full my-10">
+            <div className="w-full object-contain">
                 <img
-                    className="w-full h-full"
+                    className="w-full"
                     src={`http://localhost:8800/uploads/${post?.img}`}
                     alt=""
                 />
             </div>
-            <div className="py-5 px-3 w-full h-[175px]   rounded-b-xl  text-med-blue">
+            <div className="py-5 px-3 w-full lg:h-[175px] rounded-b-xl  text-med-blue">
                 {/* <p className="mb-5 inline-block   py-1 px-5 rounded-2xl text-sm text-white bg-med-blue">
 			{post.cat}
 		</p> */}
