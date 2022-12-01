@@ -33,31 +33,29 @@ const Login = () => {
 
     return (
         <div className="mx-auto mt-8 p-10 w-[90%] max-w-[750px] border shadow-md rounded-md">
-            <h1 className="font-fredoka text-center text-2xl text-med-blue ">
-                Login
-            </h1>
+            <h1 className=" text-center text-2xl text-med-blue ">Login</h1>
             <form className="flex flex-col mx-auto " onSubmit={handleSubmit}>
                 <input
                     type="text"
                     placeholder="username"
                     name="username"
                     onChange={handleChange}
-                    className="font-fredoka text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
+                    className=" text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
                 />
                 <input
                     type="password"
                     placeholder="password"
                     name="password"
                     onChange={handleChange}
-                    className="font-fredoka text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
+                    className=" text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
                 />
                 <button className="mt-5 text-white bg-med-blue py-2 px-3 rounded-md">
                     Login
                 </button>
                 {err && <p>{err}</p>}
-                <span className="my-3 font-fredoka text-med-blue">
+                <span className="my-3  text-med-blue">
                     Don't have an account?{" "}
-                    <Link className="font-fredoka text-med-blue" to="/register">
+                    <Link className=" text-med-blue" to="/register">
                         Register
                     </Link>
                 </span>

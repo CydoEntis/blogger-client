@@ -26,7 +26,7 @@ const Navbar = () => {
             <div className="w-full flex justify-between items-center p-3 xl:w-[1440px] xl:mx-auto">
                 <div className="text-3xl">
                     <Link to="/">
-                        <h3 className="font-fredoka text-med-blue">Bloggish</h3>
+                        <h3 className=" text-med-blue">Bloggish</h3>
                     </Link>
                 </div>
                 <NavbarIcon showNav={showNav} onClick={handleClick} />

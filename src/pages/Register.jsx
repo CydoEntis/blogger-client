@@ -33,9 +33,7 @@ const Register = () => {
 
     return (
         <div className="mx-auto mt-8 p-10 w-[90%] max-w-[750px] border shadow-md rounded-md">
-            <h1 className="font-fredoka text-center text-2xl text-med-blue ">
-                Register
-            </h1>
+            <h1 className=" text-center text-2xl text-med-blue ">Register</h1>
             <form className="flex flex-col mx-auto " onSubmit={handleSubmit}>
                 <input
                     required
@@ -43,7 +41,7 @@ const Register = () => {
                     placeholder="username"
                     name="username"
                     onChange={handleChange}
-                    className="font-fredoka text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
+                    className=" text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
                 />
                 <input
                     required
@@ -51,7 +49,7 @@ const Register = () => {
                     placeholder="email"
                     name="email"
                     onChange={handleChange}
-                    className="font-fredoka text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
+                    className=" text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
                 />
                 <input
                     required
@@ -59,15 +57,15 @@ const Register = () => {
                     placeholder="password"
                     name="password"
                     onChange={handleChange}
-                    className="font-fredoka text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
+                    className=" text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
                 />
                 <button className="mt-5 text-white bg-med-blue py-2 px-3 rounded-md">
                     Register
                 </button>
                 {err && <p>{err}</p>}
-                <span className="my-3 font-fredoka text-med-blue">
+                <span className="my-3  text-med-blue">
                     Already have an account?{" "}
-                    <Link className="font-fredoka text-med-blue" to="/login">
+                    <Link className=" text-med-blue" to="/login">
                         Login
                     </Link>
                 </span>

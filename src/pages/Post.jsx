@@ -53,18 +53,18 @@ const Post = () => {
                 <div className="user">
                     {post.userImg && <img src={post.userImg} alt="" />}
                     <div className="flex items-center">
-                        <h3 className="text-sm font-fredoka text-med-blue mr-3 capitalize">
+                        <h3 className="text-sm  text-med-blue mr-3 capitalize">
                             {post.username}
                         </h3>
-                        <p className="font-fredoka text-sm italic text-stone-400">
+                        <p className=" text-sm italic text-stone-400">
                             posted {moment(post.date).fromNow()}
                         </p>
                     </div>
                 </div>
-                <h1 className="font-fredoka text-med-blue text-2xl capitalize my-2">
+                <h1 className=" text-med-blue text-2xl capitalize my-2">
                     {post.title}
                 </h1>
-                <p className="font-fredoka text-med-blue text-md border-b-2 py-3 border-stone-100">
+                <p className=" text-med-blue text-md border-b-2 py-3 border-stone-100">
                     {getText(post.desc)}
                 </p>
                 {currentUser.username === post.username && (

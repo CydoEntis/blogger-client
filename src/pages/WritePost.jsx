@@ -55,7 +55,7 @@ const WritePost = () => {
 
     return (
         <div className="pt-[80px] lg:pt-[100px] p-3 lg:max-w-[850px] lg:mx-auto xl:max-w-[1000px] 2xl:max-w-[1240px]">
-            <div className="w-full font-fredoka mb-[100px]">
+            <div className="w-full  mb-[100px]">
                 <input
                     className="text-med-blue w-full py-1 text-xl xl:text-2xl focus:outline-none"
                     value={title}
@@ -82,13 +82,13 @@ const WritePost = () => {
                         onChange={(e) => setFile(e.target.files[0])}
                     />
                     <label
-                        className="font-fredoka text-white bg-med-blue px-3 py-2 rounded-md mb-2 cursor-pointer hover:brightness-75"
+                        className=" text-white bg-med-blue px-3 py-2 rounded-md mb-2 cursor-pointer hover:brightness-75"
                         htmlFor="file"
                     >
                         Upload Image
                     </label>
                     <button
-                        className="font-fredoka text-white bg-med-blue px-3 py-2 rounded-md mb-2 lg:mx-3 cursor-pointer hover:brightness-75"
+                        className=" text-white bg-med-blue px-3 py-2 rounded-md mb-2 lg:mx-3 cursor-pointer hover:brightness-75"
                         onClick={handleClick}
                     >
                         Publish

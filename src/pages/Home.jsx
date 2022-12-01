@@ -2,8 +2,10 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import BlogCard from "../components/BlogCard";
+import HeadBlogPost from "../components/HeadBlogPost";
 
 const Home = () => {
+    const [newestPost, setNewestPost] = useState([]);
     const [posts, setPosts] = useState([]);
     const location = useLocation();
 
@@ -13,6 +15,8 @@ const Home = () => {
         const fetchData = async () => {
             try {
                 const res = await axios.get(`/posts${category}`);
+                let firstPost = res.data.shift();
+                setNewestPost(firstPost);
                 setPosts(res.data);
             } catch (err) {
                 console.log(err);
@@ -22,11 +26,17 @@ const Home = () => {
         fetchData();
     }, [category]);
 
+    console.log(newestPost);
+    console.log(posts);
+
     return (
-        <div className="p-3 pt-[80px] grid grid-cols gap-4 grid-cols-1 md:grid-cols-2 md:pt-[100px] xl:w-[1440px] xl:mx-auto xl:grid-cols-3 2xl:grid-cols-3">
-            {posts.map((post) => (
-                <BlogCard key={post.id} post={post} />
-            ))}
+        <div className="mx-auto pt-[120px] w-[1240px]">
+            <HeadBlogPost post={newestPost} />
+            <div className="flex flex-wrap justify-between">
+                {posts.map((post) => (
+                    <BlogCard key={post.id} post={post} />
+                ))}
+            </div>
         </div>
     );
 };

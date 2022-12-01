@@ -20,7 +20,7 @@ const Menu = ({ cat }) => {
 
     return (
         <div className="">
-            <h1 className="text-xl font-fredoka text-med-blue capitalize xl:text-2xl">
+            <h1 className="text-xl  text-med-blue capitalize xl:text-2xl">
                 Other posts you may like
             </h1>
             <div className="md:flex md:flex-wrap md:w-full">
@@ -36,14 +36,14 @@ const Menu = ({ cat }) => {
                                 alt=""
                             />
                         </div>
-                        <div className="absolute bottom-0 py-2 ml-3 text-white font-fredoka">
+                        <div className="absolute bottom-0 py-2 ml-3 text-white ">
                             <Link className="link" to={`/post/${post.id}`}>
-                                <h1 className="font-fredoka capitalize text-2xl">
+                                <h1 className=" capitalize text-2xl">
                                     {post.title}
                                 </h1>
                             </Link>
                             <Link
-                                className="font-fredoka py-1 px-3 rounded-md bg-med-blue text-lg hover:bg-white hover:text-med-blue transition-all ease-in-out duration-300"
+                                className=" py-1 px-3 rounded-md bg-med-blue text-lg hover:bg-white hover:text-med-blue transition-all ease-in-out duration-300"
                                 to={`/post/${post.id}`}
                             >
                                 Read More

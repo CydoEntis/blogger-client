@@ -5,6 +5,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 fredoka: ["Fredoka One", "sans-serif"],
+                montserrat: ["Montserrat", "sans-serif"],
             },
             colors: {
                 "vivid-blue": "#31CAFF",

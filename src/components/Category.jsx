@@ -12,7 +12,7 @@ const Category = ({ value, text, cat, onChange }) => {
                 onChange={onChange}
                 className="w-5 h-5"
             />
-            <label className="ml-2 text-lg font-fredoka" htmlFor={value}>
+            <label className="ml-2 text-lg " htmlFor={value}>
                 {text}
             </label>
         </div>

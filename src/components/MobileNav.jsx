@@ -45,11 +45,11 @@ const MobileNav = ({ className, onClick, onLogout, currentUser }) => {
                 />
                 {currentUser && (
                     <>
-                        <p className="font-fredoka text-med-blue capitalize text-xl">
+                        <p className=" text-med-blue capitalize text-xl">
                             Hello, {currentUser.username}
                         </p>
                         <button
-                            className="font-fredoka my-3 text-white py-3 px-5 rounded-md bg-med-blue"
+                            className=" my-3 text-white py-3 px-5 rounded-md bg-med-blue"
                             onClick={onLogout}
                         >
                             Logout

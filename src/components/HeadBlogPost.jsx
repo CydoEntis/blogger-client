@@ -2,11 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { getText } from "../util";
 
-const BlogCard = ({ post }) => {
-    console.log(post);
+const HeadBlogPost = ({ post }) => {
     return (
-        <div className="bg-white max-w-[400px] my-2">
-            <div className="w-full h-[250px] object-contain">
+        <div className="flex bg-white w-full my-10">
+            <div className="w-full">
                 <img
                     className="w-full h-full"
                     src={`http://localhost:8800/uploads/${post?.img}`}
@@ -15,16 +14,20 @@ const BlogCard = ({ post }) => {
             </div>
             <div className="py-5 px-3 w-full h-[175px]   rounded-b-xl  text-med-blue">
                 {/* <p className="mb-5 inline-block   py-1 px-5 rounded-2xl text-sm text-white bg-med-blue">
-                    {post.cat}
-                </p> */}
+			{post.cat}
+		</p> */}
                 <Link className="link" to={`/post/${post.id}`}>
-                    <h1 className="font-montserrat uppercase text-xl tracking-wider">
+                    <h1 className="leading-10 font-montserrat uppercase text-xl tracking-wider lg:text-[2rem] lg:tracking-widest">
                         {post.title}
                     </h1>
                 </Link>
+
+                <p className="mt-5 font-montserrat">
+                    {getText(post.desc).slice(0, 250) + "..."}
+                </p>
             </div>
         </div>
     );
 };
 
-export default BlogCard;
+export default HeadBlogPost;
