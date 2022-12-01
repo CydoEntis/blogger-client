@@ -24,13 +24,13 @@ const DesktopNav = ({ className, onLogout, currentUser }) => {
                             Hello, {currentUser.username}
                         </p>
                         <Link
-                            className="mr-3  text-white bg-vivid-blue py-3 px-5 rounded-md cursor-pointer hover:brightness-75"
+                            className="mr-3 font-bold text-med-blue bg-white border-2 border-med-blue py-3 px-5 rounded-md cursor-pointer hover:text-white hover:bg-med-blue tansition duration-300 ease-out"
                             to="/write"
                         >
                             New Post
                         </Link>
                         <button
-                            className=" my-3 text-white py-3 px-5 rounded-md bg-med-blue cursor-pointer hover:brightness-75"
+                            className=" my-3 text-white border-2 border-med-blue font-bold py-3 px-5 rounded-md bg-med-blue cursor-pointer hover:text-med-blue hover:bg-white tansition duration-300 ease-out"
                             onClick={onLogout}
                         >
                             Logout
@@ -40,14 +40,14 @@ const DesktopNav = ({ className, onLogout, currentUser }) => {
                 {!currentUser && (
                     <>
                         <AuthItem
-                            text="login"
+                            text="Login"
                             to="/login"
-                            className="w-[50%] mx-auto my-3 py-3 px-5 rounded-md bg-med-blue mr-3"
+                            className="mr-3  my-3 text-white border-2 border-med-blue font-bold py-3 px-5 rounded-md bg-med-blue cursor-pointer hover:text-med-blue hover:bg-white tansition duration-300 ease-out"
                         />
                         <AuthItem
-                            text="register"
+                            text="Register"
                             to="/register"
-                            className="w-[50%] mx-auto my-3 py-3 px-5  bg-med-blue rounded-md "
+                            className=" my-3 text-white border-2 border-med-blue font-bold py-3 px-5 rounded-md bg-med-blue cursor-pointer hover:text-med-blue hover:bg-white tansition duration-300 ease-out"
                         />
                     </>
                 )}

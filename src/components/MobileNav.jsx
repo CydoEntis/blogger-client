@@ -7,7 +7,7 @@ import { AuthContext } from "../context/authContext";
 const MobileNav = ({ className, onClick, onLogout, currentUser }) => {
     return (
         <nav className={className}>
-            <ul className="text-center rounded-b-lg drop-shadow-md">
+            <ul className="text-center">
                 <NavItem
                     text="art"
                     to="/?cat=art"

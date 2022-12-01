@@ -10,8 +10,8 @@ const NavItem = ({ className, text, to, onClick }) => {
         <li className={className}>
             <NavLink
                 className={`${
-                    query === to ? "text-vivid-blue" : "text-med-blue"
-                }  capitalize text-xl sm:text-2xl lg:text-lg hover:text-vivid-blue`}
+                    query === to ? "underline font-semibold" : ""
+                }  capitalize text-xl sm:text-2xl lg:text-lg hover:underline`}
                 to={to}
                 onClick={onClick}
             >

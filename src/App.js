@@ -60,7 +60,7 @@ const router = createBrowserRouter([
 function App() {
     return (
         <div className="app">
-            <div className="">
+            <div className="relative min-h-screen">
                 <RouterProvider router={router} />
             </div>
         </div>

@@ -30,7 +30,7 @@ const Home = () => {
     console.log(posts);
 
     return (
-        <div className="mx-auto pt-[120px] p-3 w-full lg:w-[1024px] xl:w-[1240px]">
+        <div className="mx-auto py-[120px] p-3 w-full lg:w-[1024px] xl:w-[1240px]">
             <HeadBlogPost post={newestPost} />
             <div className="flex flex-col md:flex-row md:flex-wrap justify-between">
                 {posts.map((post) => (

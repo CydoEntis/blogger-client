@@ -4,14 +4,9 @@ import { Link } from "react-router-dom";
 
 const AuthItem = ({ to, text, className }) => {
     return (
-        <li className={className}>
-            <Link
-                className="text-white capitalize py-3 px-5 rounded-md bg-med-blue cursor-pointer hover:brightness-75"
-                to={to}
-            >
-                {text}
-            </Link>
-        </li>
+        <Link className={className} to={to}>
+            {text}
+        </Link>
     );
 };
 

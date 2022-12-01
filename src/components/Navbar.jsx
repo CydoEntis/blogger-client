@@ -22,8 +22,8 @@ const Navbar = () => {
     };
 
     return (
-        <div className="fixed z-40 w-full bg-white h-[100px]">
-            <div className="w-full flex justify-between items-center p-3 xl:w-[1440px] xl:mx-auto">
+        <div className="fixed z-50 w-full bg-white h-[100px]">
+            <div className="w-full flex justify-between items-center  p-3 xl:w-[1440px] xl:mx-auto">
                 <div className="text-3xl">
                     <Link to="/">
                         <h3 className=" text-med-blue">Bloggish</h3>
@@ -35,15 +35,15 @@ const Navbar = () => {
                     onLogout={handleLogout}
                     currentUser={currentUser}
                 />
-                {showNav && (
-                    <MobileNav
-                        className="p-0 fixed top-[60px] z-50 bg-white w-[100%] rounded-b-lg"
-                        onClick={handleClick}
-                        onLogout={handleLogout}
-                        currentUser={currentUser}
-                    />
-                )}
             </div>
+            {showNav && (
+                <MobileNav
+                    className="fixed top-[60px] z-50 bg-white w-full"
+                    onClick={handleClick}
+                    onLogout={handleLogout}
+                    currentUser={currentUser}
+                />
+            )}
         </div>
     );
 };
