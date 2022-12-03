@@ -43,28 +43,28 @@ const Post = () => {
     };
 
     return (
-        <div className="py-[125px] px-3 md:pt-[100px] md:max-w-[700px] md:mx-auto lg:max-w-[1024px]">
+        <div className="py-[125px] px-3  md:max-w-[700px] md:mx-auto lg:max-w-[1024px]">
             <div className="content">
                 <img
-                    className="rounded-md"
+                    className="w-full h-full"
                     src={`http://localhost:8800/uploads/${post?.img}`}
                     alt=""
                 />
                 <div className="user">
                     {post.userImg && <img src={post.userImg} alt="" />}
                     <div className="flex items-center">
-                        <h3 className="text-sm  text-med-blue mr-3 capitalize">
+                        <h3 className="text-sm  text-med-blue mr-3 capitalize lg:text-xl">
                             {post.username}
                         </h3>
-                        <p className=" text-sm italic text-stone-400">
+                        <p className=" text-sm italic text-stone-400 lg:text-xl">
                             posted {moment(post.date).fromNow()}
                         </p>
                     </div>
                 </div>
-                <h1 className=" text-med-blue text-2xl capitalize my-2">
+                <h1 className=" text-med-blue text-[1.75rem] font-bold capitalize my-2 lg:text-[2.15rem]">
                     {post.title}
                 </h1>
-                <p className=" text-med-blue text-md border-b-2 py-3 border-stone-100">
+                <p className=" text-med-blue text-xl border-b-2 py-3 border-stone-100 lg:text-2xl">
                     {getText(post.desc)}
                 </p>
                 {currentUser.username === post.username && (
