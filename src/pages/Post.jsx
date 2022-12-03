@@ -70,14 +70,14 @@ const Post = () => {
                 {currentUser.username === post.username && (
                     <div className="flex my-3">
                         <Link
-                            className="bg-vivid-blue hover:bg-cyan-600 py-2 px-1 rounded-md flex justify-center items-center"
+                            className="bg-med-blue hover:opacity-90 py-2 px-1 flex justify-center items-center  duration-300 ease-out transition-all"
                             to={`/write?edit=${post.id}`}
                             state={post}
                         >
                             <MdEdit className="mx-2 text-white text-xl" />
                         </Link>
                         <div
-                            className="mx-2 text-white bg-red-500 text-xl rounded-md hover:bg-red-600 py-2 px-1 rounded-md flex justify-center items-center"
+                            className="mx-2 text-white bg-red-500 text-xl hover:bg-red-600 py-2 px-1 flex justify-center items-center cursor-pointer duration-300 ease-out transition-all"
                             onClick={handleDelete}
                         >
                             <FaTrash
