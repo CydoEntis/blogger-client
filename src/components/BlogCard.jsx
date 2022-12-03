@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { getText } from "../util";
 
-const BlogCard = ({ post }) => {
+const BlogCard = ({ post, className }) => {
     return (
-        <div className="bg-white md:max-w-[350px] lg:max-w-[300px] my-2">
+        <div className={className}>
             <div className="w-full h-[250px] object-contain">
                 <img
                     className="w-full h-full"

@@ -48,9 +48,13 @@ const Home = () => {
             {!error && (
                 <>
                     <HeadBlogPost post={newestPost} />
-                    <div className="flex flex-col md:flex-row md:flex-wrap justify-between">
+                    <div className="flex flex-col md:flex-row md:flex-wrap justify-start">
                         {posts.map((post) => (
-                            <BlogCard key={post.id} post={post} />
+                            <BlogCard
+                                key={post.id}
+                                post={post}
+                                className="bg-white mr-1  md:max-w-[350px] lg:max-w-[300px] my-2"
+                            />
                         ))}
                     </div>
                     <Pagination numOfPages={numOfPages} category={category} />
