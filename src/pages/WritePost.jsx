@@ -56,27 +56,24 @@ const WritePost = () => {
     };
 
     return (
-        <div className="py-[125px] lg:max-w-[850px] lg:mx-auto xl:max-w-[1000px] 2xl:max-w-[1240px]">
+        <div className="py-[125px] px-2 lg:max-w-[850px] lg:mx-auto xl:max-w-[1000px] 2xl:max-w-[1240px]">
             <div className="w-full">
-                <input
-                    className="text-med-blue w-full py-1 text-xl xl:text-2xl focus:outline-none my-3 bg-[#f1f1f1] focus:border-b-2 border-med-blue"
+                <textarea
+                    className="text-med-blue w-full py-1 break-words text-xl xl:text-2xl focus:outline-none my-3 bg-[#f1f1f1] focus:border-b-2 border-med-blue resize-none"
                     value={title}
                     type="text"
                     placeholder="Title"
                     onChange={(e) => setTitle(e.target.value)}
-                />
-                <div className="editorContainer bg-white h-[300px]">
-                    <ReactQuill
-                        className="w-full h-[258px] bg-white"
-                        theme="snow"
-                        value={value}
-                        onChange={setValue}
-                    />
+                ></textarea>
+                <div className="editorContainer h-[300px] mb-[100px] md:mb-[10px]">
+                    <ReactQuill className="h-[300px]">
+                        <div className=" h-[450px] bg-white md:h-[300px] text-xl"></div>
+                    </ReactQuill>
                 </div>
             </div>
-            <div className="w-full">
-                <div className="flex justify-between lg:justify-start my-5">
-                    <div className="flex justify-center items-center">
+            <div className="w-full pt-[125px] md:pt-[50px]">
+                <div className="flex flex-col md:flex-row md:justify-between lg:justify-start my-5">
+                    <div className="px-3 flex justify-between items-center">
                         <input
                             style={{ display: "none" }}
                             type="file"
@@ -85,7 +82,7 @@ const WritePost = () => {
                             onChange={(e) => setFile(e.target.files[0])}
                         />
                         <label
-                            className=" text-white bg-med-blue px-3 py-2 rounded-md mb-2 cursor-pointer hover:brightness-75"
+                            className="text-center text-white bg-med-blue px-3 py-2 mb-2 cursor-pointer hover:brightness-75"
                             htmlFor="file"
                         >
                             Upload Image
@@ -95,13 +92,16 @@ const WritePost = () => {
                         </p>
                     </div>
                     <button
-                        className=" text-white bg-med-blue px-3 py-2 rounded-md mb-2 lg:mx-3 cursor-pointer hover:brightness-75"
+                        className=" text-white bg-med-blue px-3 py-2 mx-3 lg:mx-3 cursor-pointer hover:brightness-75"
                         onClick={handleClick}
                     >
                         Publish
                     </button>
                 </div>
-                <div className="flex flex-col md:flex-row">
+                <div className="p-3 flex flex-col md:flex-row">
+                    <h1 className="font-bold text-md text-med-blue mr-3">
+                        Category:{" "}
+                    </h1>
                     <Category
                         cat={cat}
                         value="art"
