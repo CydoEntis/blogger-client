@@ -3,6 +3,7 @@ import AuthItem from "./AuthItem";
 import NavItem from "./NavItem";
 
 import { AuthContext } from "../context/authContext";
+import { Link } from "react-router-dom";
 
 const MobileNav = ({ className, onClick, onLogout, currentUser }) => {
     return (
@@ -48,12 +49,20 @@ const MobileNav = ({ className, onClick, onLogout, currentUser }) => {
                         <p className=" text-med-blue capitalize text-xl">
                             Hello, {currentUser.username}
                         </p>
-                        <button
-                            className=" my-3 text-white py-3 px-5 rounded-md bg-med-blue"
-                            onClick={onLogout}
-                        >
-                            Logout
-                        </button>
+                        <div className="flex flex-col p-5">
+                            <Link
+                                className=" font-bold text-med-blue bg-white border-2 border-med-blue py-3 px-5 rounded-md cursor-pointer hover:text-white hover:bg-med-blue tansition duration-300 ease-out"
+                                to="/write"
+                            >
+                                New Post
+                            </Link>
+                            <button
+                                className=" my-3 text-white py-3 px-5 rounded-md bg-med-blue"
+                                onClick={onLogout}
+                            >
+                                Logout
+                            </button>
+                        </div>
                     </>
                 )}
                 {!currentUser && (

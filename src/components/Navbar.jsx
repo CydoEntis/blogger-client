@@ -38,7 +38,7 @@ const Navbar = () => {
             </div>
             {showNav && (
                 <MobileNav
-                    className="fixed top-[60px] z-50 bg-white w-full"
+                    className="fixed top-[100px] z-50 bg-white w-full"
                     onClick={handleClick}
                     onLogout={handleLogout}
                     currentUser={currentUser}
