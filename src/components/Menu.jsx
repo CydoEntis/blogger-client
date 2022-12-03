@@ -20,18 +20,18 @@ const Menu = ({ cat }) => {
 
     return (
         <div className="">
-            <h1 className="text-xl  text-med-blue capitalize xl:text-2xl">
+            <h1 className="text-xl text-med-blue capitalize xl:text-2xl">
                 Other posts you may like
             </h1>
             <div className="md:flex md:flex-wrap md:w-full">
                 {posts.map((post) => (
                     <div
-                        className="my-3 rounded-xl relative bg-zinc-600 max-w-[300px] m-2"
+                        className="my-3 relative bg-zinc-600 max-w-[300px] m-2"
                         key={post.id}
                     >
                         <div className="mix-blend-overlay">
                             <img
-                                className="rounded-xl"
+                                className=""
                                 src={`http://localhost:8800/uploads/${post?.img}`}
                                 alt=""
                             />
@@ -41,12 +41,6 @@ const Menu = ({ cat }) => {
                                 <h1 className=" capitalize text-2xl">
                                     {post.title}
                                 </h1>
-                            </Link>
-                            <Link
-                                className=" py-1 px-3 rounded-md bg-med-blue text-lg hover:bg-white hover:text-med-blue transition-all ease-in-out duration-300"
-                                to={`/post/${post.id}`}
-                            >
-                                Read More
                             </Link>
                         </div>
                     </div>

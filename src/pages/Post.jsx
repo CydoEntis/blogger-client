@@ -64,7 +64,7 @@ const Post = () => {
                 <h1 className=" text-med-blue text-[1.75rem] font-bold capitalize my-2 lg:text-[2.15rem]">
                     {post.title}
                 </h1>
-                <p className=" text-med-blue text-xl border-b-2 py-3 border-stone-100 lg:text-2xl">
+                <p className=" text-med-blue text-xl border-b-2 py-3 border-stone-100 lg:text-xl">
                     {getText(post.desc)}
                 </p>
                 {currentUser.username === post.username && (
