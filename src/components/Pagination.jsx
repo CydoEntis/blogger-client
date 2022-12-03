@@ -13,7 +13,7 @@ const Pagination = ({ numOfPages, category }) => {
     }
 
     return (
-        <nav className="w-full">
+        <nav className="relative bottom-0 w-full border h-[75px] flex items-center">
             <ul className="flex mt-3">
                 {pageNumbers.map((pageNumber) => (
                     <li className="mr-3" key={pageNumber}>

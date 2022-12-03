@@ -43,17 +43,17 @@ const Home = () => {
     }, [endpoint]);
 
     return (
-        <div className="mx-auto py-[120px] p-3 w-full lg:w-[1024px] xl:w-[1240px]">
+        <div className="relative mx-auto py-[120px] p-3 w-full lg:w-[1024px] xl:w-[1240px]">
             {error && <p>No posts found</p>}
             {!error && (
                 <>
                     <HeadBlogPost post={newestPost} />
-                    <div className="flex flex-col md:flex-row md:flex-wrap justify-start">
+                    <div className="flex flex-col justify-center md:flex-row md:flex-wrap xl:justify-between">
                         {posts.map((post) => (
                             <BlogCard
                                 key={post.id}
                                 post={post}
-                                className="bg-white mr-1  md:max-w-[350px] lg:max-w-[300px] my-2"
+                                className="bg-white m-1 md:min-w-[300px] md:max-w-[350px] lg:min-w-[490px] xl:min-w-[395px] "
                             />
                         ))}
                     </div>
