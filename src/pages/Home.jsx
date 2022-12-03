@@ -11,14 +11,12 @@ const Home = () => {
     const [numOfPages, setNumOfPages] = useState();
 
     const [error, setError] = useState(false);
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     let category = "";
     let params = searchParams.toString();
     if (params.includes("cat")) {
         category = params.substring(params.indexOf("/"), params.indexOf("&"));
     }
-
-    console.log(category);
 
     let endpoint = `/posts/?${searchParams}`;
 

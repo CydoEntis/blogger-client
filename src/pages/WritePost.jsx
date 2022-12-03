@@ -2,7 +2,7 @@ import axios from "axios";
 import moment from "moment/moment";
 import React from "react";
 import { useState } from "react";
-import ReactQuill from "react-quill";
+import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import Category from "../components/Category";
@@ -59,15 +59,19 @@ const WritePost = () => {
         <div className="py-[125px] px-2 lg:max-w-[850px] lg:mx-auto xl:max-w-[1000px] 2xl:max-w-[1240px]">
             <div className="w-full">
                 <textarea
-                    className="text-med-blue w-full py-1 break-words text-xl xl:text-2xl focus:outline-none my-3 bg-[#f1f1f1] focus:border-b-2 border-med-blue resize-none"
+                    className="text-med-blue w-full py-1 break-words text-xl xl:text-2xl focus:outline-none  bg-[#f1f1f1] focus:border-b-2 border-med-blue resize-none"
                     value={title}
                     type="text"
                     placeholder="Title"
                     onChange={(e) => setTitle(e.target.value)}
                 ></textarea>
-                <div className="editorContainer h-[300px] mb-[100px] md:mb-[10px]">
-                    <ReactQuill className="h-[300px]">
-                        <div className=" h-[450px] bg-white md:h-[300px] text-xl"></div>
+                <div className="editorContainer h-[350px] mt-[50px] mb-[100px] md:mb-[10px]">
+                    <ReactQuill
+                        className="h-[300px] text-2xl"
+                        onChange={setValue}
+                        value={value}
+                    >
+                        {/* <div className=" h-[450px] bg-white md:h-[300px] text-xl"></div> */}
                     </ReactQuill>
                 </div>
             </div>

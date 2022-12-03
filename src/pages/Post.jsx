@@ -88,7 +88,7 @@ const Post = () => {
                     </div>
                 )}
             </div>
-            <Menu cat={post.cat} />
+            {/* <Menu cat={post.cat} /> */}
         </div>
     );
 };

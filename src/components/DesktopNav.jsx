@@ -8,16 +8,28 @@ const DesktopNav = ({ className, onLogout, currentUser }) => {
     return (
         <nav className={className}>
             <ul className="flex justify-around items-center">
-                <NavItem text="art" to="/?cat=art" className="mr-3" />
-                <NavItem text="gaming" to="/?cat=gaming" className="mr-3" />
+                <NavItem text="art" to="/?cat=art&page=1" className="mr-3" />
                 <NavItem
-                    text="technology"
-                    to="/?cat=technology"
+                    text="gaming"
+                    to="/?cat=gaming&page=1"
                     className="mr-3"
                 />
-                <NavItem text="cinema" to="/?cat=cinema" className="mr-3" />
-                <NavItem text="design" to="/?cat=design" className="mr-3" />
-                <NavItem text="food" to="/?cat=food" className="mr-3" />
+                <NavItem
+                    text="technology"
+                    to="/?cat=technology&page=1"
+                    className="mr-3"
+                />
+                <NavItem
+                    text="cinema"
+                    to="/?cat=cinema&page=1"
+                    className="mr-3"
+                />
+                <NavItem
+                    text="design"
+                    to="/?cat=design&page=1"
+                    className="mr-3"
+                />
+                <NavItem text="food" to="/?cat=food&page=1" className="mr-3" />
                 {currentUser && (
                     <>
                         <p className=" text-med-blue capitalize text-xl mr-3">

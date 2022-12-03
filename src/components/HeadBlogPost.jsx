@@ -14,8 +14,8 @@ const HeadBlogPost = ({ post }) => {
             </div>
             <div className="py-5 px-3 w-full lg:h-[175px] rounded-b-xl  text-med-blue">
                 {/* <p className="mb-5 inline-block   py-1 px-5 rounded-2xl text-sm text-white bg-med-blue">
-			{post.cat}
-		</p> */}
+        	{post.cat}
+        </p> */}
                 <Link className="link" to={`/post/${post.id}`}>
                     <h1 className="leading-10 font-montserrat uppercase text-xl tracking-wider lg:text-[2rem] lg:tracking-widest">
                         {post.title}
