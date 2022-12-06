@@ -48,7 +48,7 @@ const Home = () => {
             {!error && (
                 <>
                     <HeadBlogPost post={newestPost} />
-                    <div className="flex flex-col justify-center md:flex-row md:flex-wrap xl:justify-between">
+                    <div className="flex flex-col justify-center md:flex-row md:flex-wrap">
                         {posts.map((post) => (
                             <BlogCard
                                 key={post.id}
@@ -57,7 +57,12 @@ const Home = () => {
                             />
                         ))}
                     </div>
-                    <Pagination numOfPages={numOfPages} category={category} />
+                    {numOfPages > 1 && (
+                        <Pagination
+                            numOfPages={numOfPages}
+                            category={category}
+                        />
+                    )}
                 </>
             )}
         </div>
