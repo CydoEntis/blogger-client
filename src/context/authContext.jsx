@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState, useMemo } from "react";
 import axios from "axios";
 
 export const AuthContext = createContext();
@@ -23,9 +23,13 @@ export function AuthContextProvider({ children }) {
     localStorage.setItem("user", JSON.stringify(currentUser));
   }, [currentUser]);
 
-  return (
-    <AuthContext.Provider value={(currentUser, login, logout)}>
-      {children}
-    </AuthContext.Provider>
-  );
+  const values = useMemo(() => {
+    return {
+      currentUser,
+      login,
+      logout,
+    };
+  }, [currentUser, login, logout]);
+
+  return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 }

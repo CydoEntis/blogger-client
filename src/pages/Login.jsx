@@ -10,7 +10,7 @@ function Login() {
     password: "",
   });
 
-  const [err, setErr] = useState(null);
+  // const [err, setErr] = useState(null);
 
   const handleChange = (e) => {
     setInputs((prevState) => ({
@@ -26,7 +26,8 @@ function Login() {
       await login(inputs);
       navigate("/");
     } catch (error) {
-      setErr(error.response.data);
+      console.log(error);
+      // setErr(error);
     }
   };
 
@@ -50,12 +51,12 @@ function Login() {
             className=" text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
           />
           <button
-            type="button"
+            type="submit"
             className="mt-5 text-white bg-med-blue py-2 px-3 rounded-md"
           >
             Login
           </button>
-          {err && <p>{err}</p>}
+          {/* {err && <p>{err}</p>} */}
           <span className="my-3  text-med-blue">
             Don`&apos`t have an account?
             <Link className=" text-med-blue" to="/register">

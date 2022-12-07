@@ -21,12 +21,12 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(inputs);
     try {
       await axios.post("/auth/register", inputs);
       navigate("/login");
     } catch (error) {
-      setErr(error.response.data);
+      setErr(error);
     }
   };
 
@@ -60,7 +60,7 @@ function Register() {
             className=" text-xl my-5 border-b-2 border-med-blue focus:outline-none text-med-blue"
           />
           <button
-            type="button"
+            type="submit"
             className="mt-5 text-white bg-med-blue py-2 px-3 rounded-md"
           >
             Register
