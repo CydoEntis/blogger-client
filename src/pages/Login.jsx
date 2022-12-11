@@ -10,7 +10,7 @@ function Login() {
     password: "",
   });
 
-  // const [err, setErr] = useState(null);
+  const [err, setErr] = useState(null);
 
   const handleChange = (e) => {
     setInputs((prevState) => ({
@@ -26,8 +26,8 @@ function Login() {
       await login(inputs);
       navigate("/");
     } catch (error) {
-      console.log(error);
-      // setErr(error);
+      console.log(error.response.data);
+      setErr(error.response.data);
     }
   };
 
@@ -35,6 +35,7 @@ function Login() {
     <div className="h-screen flex justify-center items-center">
       <div className="mx-auto bg-white py-[10rem] px-5 md:w-[60%] max-w-[750px]">
         <h1 className=" text-center text-2xl text-med-blue ">Login</h1>
+        <div>{err && <p>{err}</p>}</div>
         <form className="flex flex-col " onSubmit={handleSubmit}>
           <input
             type="text"
@@ -58,7 +59,7 @@ function Login() {
           </button>
           {/* {err && <p>{err}</p>} */}
           <span className="my-3  text-med-blue">
-            Don`&apos`t have an account?
+            Need an account?
             <Link className=" text-med-blue" to="/register">
               Register
             </Link>
